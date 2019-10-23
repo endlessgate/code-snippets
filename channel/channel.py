@@ -1,4 +1,4 @@
-from event_channel.abc import (
+from channel.abc import (
     WriteHandler,
     ReadHandler,
 )
