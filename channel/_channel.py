@@ -9,7 +9,7 @@ from typing import (
     Generic,
 )
 
-from gbrick.plugins.channel.base import (
+from channel.base import (
     WriteHandler,
     ReadHandler,
     BaseStateChannel,
