@@ -2,7 +2,7 @@ import asyncio
 
 from collections import deque
 
-from channel.exception import (
+from event_channel.exception import (
     AlreadyEventTask,
     UnboundTasks,
 )

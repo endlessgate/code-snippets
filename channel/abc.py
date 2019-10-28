@@ -3,7 +3,7 @@ from abc import (
     abstractmethod,
 )
 
-from channel.exceptions import EndOfChannel
+from event_channel.exception import EndOfChannel
 
 
 class BaseHandler(ABC):
