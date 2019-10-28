@@ -1,1 +1,0 @@
-from ._channel import make_state_channel
