@@ -1,0 +1,36 @@
+python console open
+
+> from app import db
+> db.create_all()
+
+# Add user
+> from app import User
+> user1 = User(username='Test', email='test@test.kr', password='password')
+> db.session.add(user1)
+
+> user2 = User(username='Test2', email='test2@test.kr', password='password')
+> db.session.add(user2)
+
+> db.session.commit()
+
+
+> User.query.all()
+> User.query.first()
+> user = User.query.filter_by(username="susan").first()
+> user.id
+> user.posts
+
+# Add posts
+> post1 = Post(title="blog1", content="First post content", user_id = user.id)
+> post2 = Post(title="blog1", content="First post content", user_id = user.id)
+> db.session.add(post1)
+> db.session.add(post2)
+> db.session.commit()
+> user.posts
+
+> for post in posts:
+    print(post.title)
+
+> post = Post.query.first()
+> post
+> post.user_id
