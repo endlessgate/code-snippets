@@ -8,7 +8,6 @@ from event_channel.internal import InternalEventQueue
 from event_channel.exception import (
     UnboundTasks,
     AlreadyEventTask,
-    EndOfChannel,
 )
 
 
@@ -52,11 +51,8 @@ class ReadEventChannel(ReadHandler):
         self._internal.put_nowait(value)
 
     async def read(self):
-        try:
-            data = await self.reader.read()
-        except IndexError:
-            raise EndOfChannel('Close channel')
-        return data
+        value = await self._internal.get()
+        return value
 
 
 class EventStream:
